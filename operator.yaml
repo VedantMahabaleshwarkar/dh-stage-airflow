@@ -2676,8 +2676,6 @@ spec:
               description: Spec for Flower component.
               properties:
                 enableroutes:
-                  description: 'enableroutes: true enables routes for the AirflowUI
-                    and CeleryUI'
                   type: boolean
                 image:
                   description: Image defines the Flower Docker image.
@@ -3185,8 +3183,6 @@ spec:
               description: Spec for Airflow UI component.
               properties:
                 enableroutes:
-                  description: 'enableroutes: true enables routes for the AirflowUI
-                    and CeleryUI'
                   type: boolean
                 image:
                   description: Image defines the AirflowUI Docker image.
@@ -3612,10 +3608,9 @@ subjects:
   namespace: dh-stage-airflow
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   name: airflow-on-k8s-operator-manager-rolebinding
-  namespace: dh-stage-airflow
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
